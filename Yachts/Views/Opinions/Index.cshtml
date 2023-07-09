@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Yachts.Models.Opinion>
+
+@{
+    ViewData["Title"] = "Opinie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Opinie</h1>
+<h5>Tutaj znajdziesz opinie naszych klientów na temat współpracy z nami oraz naszych jachtów.<br />Korzystałeś z naszych usług? Koniecznie <a asp-action="Create">dodaj opinie!</a></h5>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Autor
+            </th>
+            <th>
+                Opis
+            </th>
+            <th>
+                Ocena
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

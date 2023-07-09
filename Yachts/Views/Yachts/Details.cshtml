@@ -1,0 +1,51 @@
+﻿@model Yachts.Models.Yacht
+
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<h1>Szczegóły</h1>
+<hr/>
+<div >
+    <div class ="content-center">
+        <img src="@Html.DisplayFor(model => model.PhotoUrl)" class="details-picture"/>
+    </div>
+    <hr/>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nazwa
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Typ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-sm-2">
+            Cena za dobę
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PricePerDay)
+        </dd>
+        <dt class = "col-sm-2">
+            Opis
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            Dostępne terminy
+        </dt>
+        <dd class="col-sm-10">
+            <a asp-controller="Reservations" asp-action="GetReservationByYachtId" asp-route-id="@Model?.Id">Pokaż rezerwacje</a>
+        </dd>
+    </dl>
+</div>
+<hr/>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edytuj</a> |
+    <a asp-action="Index">Powrót do listy</a>
+</div>

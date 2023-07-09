@@ -1,0 +1,42 @@
+﻿@model Yachts.Models.Reservation
+
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<h1>Szczegóły</h1>
+
+<div>
+    <h4>Rezerwacji</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Jacht
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yacht)
+        </dd>
+        <dt class = "col-sm-2">
+            Klient
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Customer)
+        </dd>
+        <dt class = "col-sm-2">
+            Data od
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Data do
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edytuj</a> |
+    <a asp-action="Index">Powrót do listy</a>
+</div>

@@ -1,0 +1,50 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.float-left {
+    float:left;
+}
+
+.list-image {
+    height: 10rem;
+    width: auto;
+}
+
+.details-picture {
+    height: 40rem;
+    width: auto;
+}
+
+.content-center {
+    text-align: center;
+}
+
+.margin-top {
+    margin-top:-30px;
+    margin-left:-16.5vw;
+    padding-top: 15%;
+}
+.homepage {
+    width: 150%;
+    height: 100vh;
+    font-weight: bold;
+    background-image: url('https://cdn.pixabay.com/photo/2016/08/21/12/52/lake-1609598_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

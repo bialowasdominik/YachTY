@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Yachts.Models.Yacht>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Oferta</h1>
+<br/>
+<h5>Tutaj znajdziesz wszytskie dostępne w naszej ofercie jachty. W Szczegółach każdego z nich dostępny jest terminarz wktórym możesz sprawdzić czy interesujący Cię jacht jest aktualnie dostępny. W razie pytać bądź rezerwacji prosimy o kontakt pod numerem telefonu: <strong>+48 123 34 45</strong> bądź mailowo <strong>rezerwacja@jachty.pl</strong></h5>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                Kod jachtu
+            </th>
+            <th>
+                Nazwa
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Cena za dobę (zł)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@item.PhotoUrl" class="list-image"/>
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PricePerDay)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
